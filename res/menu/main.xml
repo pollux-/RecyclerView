@@ -3,9 +3,20 @@
     tools:context="com.example.recylerview.MainActivity" >
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/vertical"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="@string/action_settings"/>
+        android:title="@string/action_vertical"/>
+    <item
+        android:id="@+id/horizontal"
+        android:orderInCategory="101"
+        android:showAsAction="never"
+        android:title="@string/action_horizontal"/>
+    
+     <item
+        android:id="@+id/grid"
+        android:orderInCategory="102"
+        android:showAsAction="never"
+        android:title="@string/action_grid"/>
 
 </menu>

@@ -3,7 +3,9 @@
 
     <string name="app_name">RecylerView</string>
     <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_vertical">Vertical</string>
+    <string name="action_horizontal">Horizontal</string>
+    <string name="action_grid">Grid</string>
     <string name="aries">Aries</string>
     <string name="columba">Columba</string>
     <string name="carnia">carnia</string>

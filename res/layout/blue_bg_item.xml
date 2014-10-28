@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="10dp" >
@@ -9,16 +9,18 @@
     <com.android.volley.toolbox.NetworkImageView
         android:id="@+id/blue_thumb"
         android:layout_width="fill_parent"
+        android:scaleType="centerCrop"
         android:layout_height="150dp" />
 
     <TextView
         android:id="@+id/blue"
         android:layout_width="fill_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom"
+        android:background="#88676767"
         android:gravity="center"
-        android:background="@android:color/darker_gray"
-        android:text="@string/aries"
-        android:textColor="#0000ff"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:text="@string/columba"
+        android:textAppearance="?android:attr/textAppearanceListItemSmall"
+        android:textColor="#0000FF" />
 
-</LinearLayout>
+</FrameLayout>

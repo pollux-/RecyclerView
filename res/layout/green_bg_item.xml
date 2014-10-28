@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
     android:padding="10dp" >
 
     <com.android.volley.toolbox.NetworkImageView
         android:id="@+id/green_thumb"
-        android:layout_width="170dp"
-        android:layout_height="150dp" />
+        android:layout_width="fill_parent"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop" />
 
     <TextView
         android:id="@+id/green"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:background="@android:color/darker_gray"
-        android:text="@string/carnia"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom"
+        android:background="#88676767"
         android:gravity="center"
+        android:text="@string/carnia"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#00FF00" />
 
-</LinearLayout>
+</FrameLayout>

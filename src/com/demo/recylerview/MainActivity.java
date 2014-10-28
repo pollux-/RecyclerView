@@ -2,10 +2,12 @@ package com.demo.recylerview;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+
 import com.demo.recylerview.R;
 
 /**
@@ -15,17 +17,23 @@ import com.demo.recylerview.R;
 
 public class MainActivity extends Activity {
 
+	private static final int COULMN_SIZE = 2;
+	private LinearLayoutManager mLinearLayoutManager;
+	private GridLayoutManager mGridLayoutManager;
+	private RecyclerView mRecyclerView;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		RecyclerView recyclerView = (RecyclerView) findViewById(R.id.list);
-		recyclerView.setHasFixedSize(true);
-		LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-		layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-		recyclerView.setLayoutManager(layoutManager);
-		recyclerView.setAdapter(new RecycleAdapter());
+		mRecyclerView = (RecyclerView) findViewById(R.id.list);
+		mRecyclerView.setHasFixedSize(true);
+		mLinearLayoutManager = new LinearLayoutManager(this);
+
+		mLinearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+		mRecyclerView.setLayoutManager(mLinearLayoutManager);
+		mRecyclerView.setAdapter(new RecycleAdapter());
 	}
 
 	@Override
@@ -36,13 +44,28 @@ public class MainActivity extends Activity {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
+
+		switch (item.getItemId()) {
+		case R.id.vertical:
+			mLinearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+			mRecyclerView.setLayoutManager(mLinearLayoutManager);
 			return true;
+
+		case R.id.horizontal:
+			mLinearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+			mRecyclerView.setLayoutManager(mLinearLayoutManager);
+			return true;
+
+		case R.id.grid:
+			if (mGridLayoutManager == null)
+				mGridLayoutManager = new GridLayoutManager(this, COULMN_SIZE);
+			mRecyclerView.setLayoutManager(mGridLayoutManager);
+			return true;
+
+		default:
+			break;
 		}
+
 		return super.onOptionsItemSelected(item);
 	}
 }
