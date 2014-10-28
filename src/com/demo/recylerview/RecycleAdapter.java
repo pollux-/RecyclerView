@@ -26,6 +26,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecyclerHolder> {
 
 	public RecycleAdapter() {
 		mImageLoader = ImageCacheManager.INSTANCE.getImageLoader();
+		mRandom = new Random();
 	}
 
 	@Override
