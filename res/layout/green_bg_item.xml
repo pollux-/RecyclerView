@@ -2,14 +2,22 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-     android:gravity="center"
-    android:orientation="vertical" >
+    android:orientation="horizontal"
+    android:padding="10dp" >
+
+    <com.android.volley.toolbox.NetworkImageView
+        android:id="@+id/green_thumb"
+        android:layout_width="170dp"
+        android:layout_height="150dp" />
 
     <TextView
         android:id="@+id/green"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/i_am_quot_green"
+        android:layout_marginLeft="10dp"
+        android:background="@android:color/darker_gray"
+        android:text="@string/carnia"
+        android:gravity="center"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#00FF00" />
 

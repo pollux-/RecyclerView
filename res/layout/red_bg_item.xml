@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:gravity="center"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <com.android.volley.toolbox.NetworkImageView
+        android:id="@+id/red_thumb"
+        android:layout_width="fill_parent"
+        android:layout_height="150dp" />
 
     <TextView
         android:id="@+id/red"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/i_am_red"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom"
+        android:background="#88676767"
+        android:gravity="center"
+        android:text="@string/columba"
+        android:textAppearance="?android:attr/textAppearanceListItemSmall"
         android:textColor="#FF0000" />
 
-</LinearLayout>
+</FrameLayout>

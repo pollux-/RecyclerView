@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.demo.recylerview;
+package com.demo.recylerview.utils;
 
 /**
  * Some simple test data to use for this sample app.

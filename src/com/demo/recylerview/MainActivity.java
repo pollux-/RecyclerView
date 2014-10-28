@@ -8,6 +8,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import com.demo.recylerview.R;
 
+/**
+ * @author sreekumar
+ * 
+ */
+
 public class MainActivity extends Activity {
 
 	@Override

@@ -1,16 +1,32 @@
 package com.demo.recylerview;
 
+import java.util.Random;
+
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.demo.recylerview.R;
+import com.android.volley.toolbox.ImageLoader;
 import com.demo.recylerview.RecyclerHolder.ViewType;
+import com.demo.recylerview.cache.ImageCacheManager;
+import com.demo.recylerview.utils.Images;
+
+/**
+ * @author sreekumar
+ * 
+ */
 
 public class RecycleAdapter extends RecyclerView.Adapter<RecyclerHolder> {
 
+	private static final int TYPE_COUNT = 3;
 	private static final int COUNT = 100;
+	private ImageLoader mImageLoader;
+	private Random mRandom;
+
+	public RecycleAdapter() {
+		mImageLoader = ImageCacheManager.INSTANCE.getImageLoader();
+	}
 
 	@Override
 	public int getItemCount() {
@@ -22,10 +38,13 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecyclerHolder> {
 
 		switch (getItemViewType(position)) {
 		case ViewType.RED_BG:
+			setRedItem(holder, position);
 			break;
 		case ViewType.GREEN_BG:
+			setGreenItem(holder, position);
 			break;
 		case ViewType.BLUE_BG:
+			setBlueItem(holder, position);
 			break;
 		default:
 			break;
@@ -33,10 +52,29 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecyclerHolder> {
 
 	}
 
+	private void setRedItem(RecyclerHolder holder, int position) {
+		holder.mRedHolder.mRed.setText("Position: " + position);
+		holder.mRedHolder.mThumb.setImageUrl(Images.imageThumbUrls[mRandom.nextInt(Images.imageThumbUrls.length)],
+				mImageLoader);
+	}
+
+	private void setBlueItem(RecyclerHolder holder, int position) {
+		holder.mBlueHolder.mBlue.setText("Position: " + position);
+
+		holder.mBlueHolder.mThumb.setImageUrl(Images.imageThumbUrls[mRandom.nextInt(Images.imageThumbUrls.length)],
+				mImageLoader);
+	}
+
+	private void setGreenItem(RecyclerHolder holder, int position) {
+		holder.mGreenHolder.mGreen.setText("Position: " + position);
+		holder.mGreenHolder.mThumb.setImageUrl(Images.imageThumbUrls[mRandom.nextInt(Images.imageThumbUrls.length)],
+				mImageLoader);
+	}
+
 	@Override
 	public int getItemViewType(int position) {
 
-		return position % 3;
+		return position % TYPE_COUNT;
 	}
 
 	@Override
@@ -56,7 +94,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecyclerHolder> {
 			break;
 		default:
 			view = null;
-			
+
 		}
 
 		return new RecyclerHolder(view, viewType);
