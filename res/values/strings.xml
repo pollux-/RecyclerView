@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RecylerView</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="i_am_blue">I am BLUE</string>
+    <string name="i_am_quot_green">I am GREEN</string>
+    <string name="i_am_red">I am RED</string>
+
+</resources>
